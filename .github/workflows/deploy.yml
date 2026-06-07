@@ -1,0 +1,35 @@
+name: Deploy AWS Static Website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          # Securely using GitHub Secrets so keys do not leak in the repository
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+
+      - name: Sync files to S3
+        run: |
+          echo "Deploying website files to S3..."
+          aws s3 sync website/ s3://aws-static-website-platform-100403449729 --delete
+
+      - name: Invalidate CloudFront Cache
+        run: |
+          echo "Invalidating CloudFront edge cache..."
+          aws cloudfront create-invalidation \
+            --distribution-id E7V0VCJZAXIHT \
+            --paths "/*"
