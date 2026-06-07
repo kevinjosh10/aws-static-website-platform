@@ -3,24 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS Static Website</title>
+    <title>AWS Static Website | Premium Hosting Platform</title>
+    <meta name="description" content="Production-grade static website hosting on AWS using S3, CloudFront, ACM, boto3 automation, lifecycle policies, and GitHub Actions CI/CD.">
+    <!-- Modern Typography: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-        <h1>AWS Static Website Platform</h1>
-        <p>Production-Grade Hosting & CI/CD</p>
+<body class="dark-theme">
+    <div class="blob-bg"></div>
+    <div class="blob-bg blob-2"></div>
+
+    <nav class="glass-nav">
+        <div class="logo">
+            <i class="fa-brands fa-aws"></i> AWS Platform
+        </div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#architecture">Architecture</a>
+            <a href="https://github.com" target="_blank" class="btn-primary">GitHub Repo</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content fade-in-up">
+            <span class="badge">Version 1.0 Live</span>
+            <h1>Production-Grade <br><span class="gradient-text">Static Hosting</span></h1>
+            <p>Deploy lightning-fast, secure static websites using Amazon S3, CloudFront CDN, and GitHub Actions CI/CD. Built for scale, designed for developers.</p>
+            <div class="hero-actions">
+                <a href="#features" class="btn-primary btn-large">Explore Features</a>
+                <a href="#architecture" class="btn-secondary btn-large">View Architecture</a>
+            </div>
+        </div>
+        <div class="hero-graphic scale-in">
+            <div class="glass-card main-card">
+                <div class="code-header">
+                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                </div>
+                <pre><code>$ git push origin main
+> Deploying to S3...
+> Invalidating CloudFront cache...
+> Success! Site is live.</code></pre>
+            </div>
+        </div>
     </header>
+
     <main>
-        <section id="features">
-            <h2>Features</h2>
-            <ul>
-                <li>Amazon S3 Static Hosting</li>
-                <li>Amazon CloudFront CDN</li>
-                <li>Automated Deployments via GitHub Actions</li>
-            </ul>
+        <section id="features" class="features-section">
+            <h2 class="section-title fade-in-up">Why This Architecture?</h2>
+            <div class="features-grid">
+                <div class="glass-card feature-card stagger-1">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3>Serverless Hosting</h3>
+                    <p>Zero servers to manage. S3 provides 99.999999999% durability and infinite scalability for your static assets.</p>
+                </div>
+                <div class="glass-card feature-card stagger-2">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3>Edge Caching</h3>
+                    <p>CloudFront CDN caches your content at edge locations worldwide, delivering single-digit millisecond latency.</p>
+                </div>
+                <div class="glass-card feature-card stagger-3">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3>Free SSL/TLS</h3>
+                    <p>AWS Certificate Manager automatically provisions and renews SSL certificates, enforcing HTTPS everywhere.</p>
+                </div>
+                <div class="glass-card feature-card stagger-4">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3>CI/CD Automation</h3>
+                    <p>GitHub Actions seamlessly builds, syncs files to S3, and invalidates the CloudFront cache upon every push.</p>
+                </div>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <div class="glass-card footer-card">
+            <p>&copy; 2026 AWS Static Website Platform. Built with <i class="fa-solid fa-heart" style="color: #ff4757;"></i> for the Portfolio.</p>
+        </div>
+    </footer>
+
     <script src="js/main.js"></script>
 </body>
 </html>
